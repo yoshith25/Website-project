@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assignment.css">
+    <title>Assignment Due dates</title>
+</head>
+<body>
+    <div id="header">
+        <div id="logo"></div> 
+        <h1>Strategic Student Excellence</h1>
+    </div>
+    <nav id="navigation">
+        <a id="links" href="./homepage.html">Home Page</a>
+        <a id="links" href="./outingstudent.html">Outing permission</a>
+        <a id="links" href="./ovel.php">Oval Menu</a>
+    </nav>
+    <div class="container">
+        <div id="content">
+            <div id="image-container">
+                <img src="assignment.png" alt="ovelimage">
+            </div>
+            <div id="stick"></div>
+            <div class="container">
+                <h1>Assignment Due Date Reminder</h1>
+                <p><strong>Due Dates:Web Technologies</strong> <span id="due-dates"></span></p> 
+                <ul id="assignment-list"></ul>
+            </div>
+            <audio id="notification-sound" src="notification_sound.mp3"></audio>
+        </div>
+    </div>
+
+    <script>
+        
+        function handleNotifications(notifications) {
+            if (!("Notification" in window)) {
+                console.error("This browser does not support desktop notification");
+                return;
+            }
+
+            Notification.requestPermission().then(function(permission) {
+                if (permission === "granted") {
+                    notifications.forEach(function(notification) {
+                        var title = "Task ID: " + notification.id;
+                        var body = "Due in " + notification.timeDiff;
+                        var n = new Notification(title, { body: body });
+                    });
+                }
+            });
+        }
+
+       
+        function displayDueDatesAndAssignments(assignments) {
+            var dueDatesElement = document.getElementById("due-dates");
+            var assignmentListElement = document.getElementById("assignment-list");
+
+            assignments.forEach(function(assignment) {
+                var dueDate = assignment.dueDate;
+                var assignmentData = assignment.assignmentData;
+
+               
+                dueDatesElement.textContent = dueDatesElement.textContent + dueDate + ", ";
+
+              
+                var listItem = document.createElement("li");
+                listItem.textContent = assignmentData;
+                assignmentListElement.appendChild(listItem);
+            });
+        }
+
+        
+        function checkAssignments() {
+            setInterval(function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "Client-Side.php", true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = xhr.responseText;
+                        console.log("Server Response:", response); 
+                        var assignments = JSON.parse(response);
+                        displayDueDatesAndAssignments(assignments); 
+                        handleNotifications(assignments);
+                    }
+                };
+                xhr.send();
+            }, 60000); 
+        }
+
+       
+        checkAssignments();
+    </script>
+</body>
+</html>

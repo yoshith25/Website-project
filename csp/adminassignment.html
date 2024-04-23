@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="adminassignment.css">
+    <title>Assignment Due dates</title>
+</head>
+<body>
+    <div id="header">
+        <div id="logo"></div> 
+        <h1>Strategic Student Excellence</h1>
+    </div>
+    <nav id="navigation">
+        <a id="links" href="./homepage.html">Home Page</a>
+        <a id="links" href="./outingstudent.html">Outing permission</a>
+        <a id="links" href="./ovel.php">Oval Menu</a>
+    </nav>
+    <div class="container">
+        <div id="content">
+            <div id="image-container">
+                <img src="assignment.png" alt="ovelimage">
+            </div>
+            <div id="stick"></div>
+            <div class="container">
+                <form method="post" action="server-side.php">
+                    <label for="CSPassignment_data">Assignment Data:</label><br>
+                    <input type="text" id="CSPassignment_data" name="CSPassignment_data"><br>
+                    
+                    <label for="due-date">Due Date and Time:</label><br>
+                    <input type="datetime-local" id="due-date" name="due-date" required><br><br>
+                    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <audio id="notification-sound" src="notification_sound.mp3"></audio>
+        </div>
+    </div>
+
+
+</body>
+</html>

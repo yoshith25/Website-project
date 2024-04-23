@@ -1,0 +1,87 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+#header {
+    background-color: #0e0d0de7;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#logo {
+    background-color: white;
+    background-image: url(Woxsen_logo.png);
+    background-size: contain;
+    padding-top: 0px;
+    width: 180px;
+    height: 85px;
+}
+
+#up a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#up a:hover {
+    background-color: #104488dc;
+}
+
+#content {
+    margin: 50px auto;
+    width: 300px;
+    background-color: #0e0d0de7;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+   
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px; 
+    background-color: #104488dc;
+    color: wheat;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0a3772dc;
+}
+
+p {
+    color: wheat;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    
+}
+
+#header {
+    background-color: #0e0d0de7;
+    position: relative;
+    height: 75px;
+    display: flex;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+
+h1 {
+    padding-left: 235px;
+    padding-top: 20px;
+}
+
+#navigation {
+    background-color: #042f67dc;
+    font-size: 16px;
+    height: 28px;
+    margin-left: 220px;
+    padding-top: 8px;
+    
+}
+
+#links {
+    text-decoration: none;
+    padding: 45px;
+    
+}
+
+#logo {
+    background-color: white;
+    cursor: pointer;
+    background-image: url(Woxsen_logo.png);
+    background-size: contain;
+    padding-top: 0px;
+    width: 220px;
+    height: 111px;
+    position: fixed;
+    top: 0;
+    transition: 0.2s;
+}
+
+#content {
+    background-color: #0e0d0de7;
+    font-size: 16px;
+    height: 500px;
+}
+
+#image-container {
+    float: right;
+    width: 700px;
+}
+
+#element {
+    background-color: rgb(37, 36, 36);
+    height: 550px;
+    font-weight: bold;
+    font-size: 50px;
+    
+}
+ 
+#image-container img {
+    width: 100%;
+    height: auto;
+}   
+
+h2 {
+    font-weight: bold;
+    color: wheat;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+p{
+    font-weight: normal;
+    font-size: 20px;
+    padding-top: 8px; 
+    padding-left: 8px; 
+}
